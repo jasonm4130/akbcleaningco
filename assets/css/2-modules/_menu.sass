@@ -1,0 +1,25 @@
+nav.navbar.navbar-default
+  background: none
+  border: none
+  border-radius: none
+  position: absolute
+  top: 0
+  z-index: 20
+  .navbar-nav
+    padding-top: 30px
+  .navbar-brand
+    margin-top: 30px
+    font-size: 4em
+    font-weight: lighter
+    font-family: 'roboto', sans-serif
+    color: $color-six
+    transition: all 0.3s ease-in-out
+    span.highlight
+      color: $color-one
+      font-family: 'Open Sans', sans-serif
+      transition: all 0.3s ease-in-out
+      font-weight: bold
+    &:hover
+      color: darken($color-six, 10%)
+      span.highlight
+        color: darken($color-one, 5%)
