@@ -32,7 +32,7 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['pug'], function (done) {
+gulp.task('jekyll-build', ['pug', 'sass'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
@@ -89,7 +89,8 @@ gulp.task('watch', function () {
     gulp.watch(['_pugfiles/**/*.pug'], ['pug']);
     gulp.watch('assets/css/**/*.sass', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
-    gulp.watch(['/assets/js/**/*.js'], ['jekyll-rebuild']);
+    gulp.watch(['assets/js/**/*.js'], ['jekyll-rebuild']);
+    gulp.watch(['assets/images/*'], ['jekyll-rebuild']);
 });
 
 /**
@@ -97,4 +98,4 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('build', ['pug', 'sass', 'jekyll-build']);
+gulp.task('build', ['jekyll-build']);
