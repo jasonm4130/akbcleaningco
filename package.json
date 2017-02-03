@@ -18,6 +18,7 @@
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
+    "gulp-tinypng": "^1.0.2",
     "gulp-util": "^3.0.8",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-pngquant": "^5.0.0"
