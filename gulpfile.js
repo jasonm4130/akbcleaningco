@@ -91,8 +91,11 @@ gulp.task('sass', function () {
 /**
  * Image Optimization Task
  */
- gulp.task('image-op', ['large-image','medium-image', 'small-image', 'src-image'], function(){
-
+ gulp.task('image-op', ['large-image','medium-image', 'small-image', 'src-image'], function(done){
+   browserSync.notify(messages.jekyllBuild);
+   return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+       .on('close', done);
+       browserSync.reload();
  });
 
  gulp.task('large-image', function() {
@@ -159,7 +162,7 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**/*.sass', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
     gulp.watch(['assets/js/**/*.js'], ['jekyll-rebuild']);
-    gulp.watch(['assets/images/*'], ['image-op', 'jekyll-rebuild']);
+    gulp.watch(['assets/images/src/*'], ['image-op']);
 });
 
 /**
