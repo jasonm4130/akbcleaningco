@@ -6,6 +6,12 @@ var cp          = require('child_process');
 var plumber     = require('gulp-plumber');
 var gutil       = require('gulp-util');
 var pug         = require('gulp-pug');
+var imageResize = require('gulp-image-resize');
+var imagemin    = require('gulp-imagemin');
+var pngquant    = require('imagemin-pngquant');
+var jpegtran    = require('imagemin-jpegtran');
+var rename = require("gulp-rename");
+
 
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
@@ -82,6 +88,68 @@ gulp.task('sass', function () {
  });
 
 /**
+ * Image Optimization Task
+ */
+ gulp.task('image-op', ['large-image','medium-image', 'small-image', 'src-image'], function(){
+
+ });
+
+ gulp.task('large-image', function() {
+     return gulp.src('assets/images/src/**/*.+(png|jpg)')
+         .pipe(imageResize({
+             width: 1600
+         }))
+         .pipe(imagemin({
+             progressive: true,
+             use: [pngquant()]
+         }))
+         .pipe(rename({
+             suffix: '-large'
+         }))
+         .pipe(gulp.dest('assets/images/'))
+ });
+
+ gulp.task('medium-image', function() {
+     return gulp.src('assets/images/src/**/*.+(png|jpg)')
+         .pipe(imageResize({
+             width: 800
+         }))
+         .pipe(imagemin({
+             progressive: true,
+             use: [pngquant()]
+         }))
+         .pipe(rename({
+             suffix: '-medium'
+         }))
+         .pipe(gulp.dest('assets/images/'))
+ });
+
+ gulp.task('small-image', function() {
+     return gulp.src('assets/images/src/**/*.+(png|jpg)')
+         .pipe(imageResize({
+             width: 400
+         }))
+         .pipe(imagemin({
+             progressive: true,
+             use: [pngquant()]
+         }))
+         .pipe(rename({
+             suffix: '-small'
+         }))
+         .pipe(gulp.dest('assets/images/'))
+ });
+
+ gulp.task('src-image', function() {
+     return gulp.src('assets/images/src/**/*.+(png|jpg)')
+         .pipe(imagemin({
+             progressive: true,
+             use: [pngquant()]
+         }))
+         .pipe(gulp.dest('assets/images/'))
+ });
+
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
@@ -90,7 +158,7 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**/*.sass', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
     gulp.watch(['assets/js/**/*.js'], ['jekyll-rebuild']);
-    gulp.watch(['assets/images/*'], ['jekyll-rebuild']);
+    gulp.watch(['assets/images/*'], ['image-op', 'jekyll-rebuild']);
 });
 
 /**
