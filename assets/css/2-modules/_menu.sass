@@ -1,13 +1,43 @@
 nav.navbar.navbar-default
   background: none
   border: none
-  border-radius: none
+  border-radius: 0
   position: absolute
   top: 0
   z-index: 20
+  width: 100%
+  @media (max-width: 768px)
+    background: $color-five
+  .navbar-collapse.in
+    overflow-x: hidden
+  &.navbar-pages
+    background-color: $color-five
+    width: 100%
+    .navbar-collapse
+      padding: 0
+    .navbar-brand
+      margin-top: 5px
+      margin-bottom: 5px
+    .navbar-nav
+      margin-left: 0px
+      padding-top: 0px
+      li
+        a
+          padding-top: 20px
+          padding-bottom: 20px
+          color: $color-six
+          &:hover
+            color: $color-five
+        &.active
+          a
+            &:hover
+              background: darken($color-six, 5%)
   .navbar-nav
-    padding-top: 30px
-    margin-left: 90px
+    background: $color-five
+    @media (min-width: 768px)
+      margin-left: 90px
+      padding-top: 30px
+      background: transparent
     li
       transition: all 0.3s ease-in-out
       &.active > a
@@ -20,10 +50,17 @@ nav.navbar.navbar-default
       > a
         color: $color-six
         transition: all 0.3s ease-in-out
+        @media (max-width: 768px)
+          padding-top: 20px
+          padding-bottom: 20px
       &:hover
         > a
-          color: darken($color-six, 10%)
-          transform: scale(1.1)
+          @media (max-width: 768px)
+            background-color: $color-six
+            color: $color-five
+          @media (min-width: 768px)
+            transform: scale(1.1)
+            color: darken($color-six, 10%)
 
   .navbar-brand
     margin-top: 30px
