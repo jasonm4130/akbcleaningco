@@ -70,7 +70,8 @@ gulp.task('sass', function () {
     return gulp.src('assets/css/main.sass')
         .pipe(sass({
             includePaths: ['css'],
-            onError: browserSync.notify
+            onError: browserSync.notify,
+            outputStyle: 'compressed'
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('_site/assets/css'))
