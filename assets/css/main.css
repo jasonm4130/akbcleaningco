@@ -6396,7 +6396,24 @@ nav.navbar.navbar-default {
   top: 0;
   z-index: 20; }
   nav.navbar.navbar-default .navbar-nav {
-    padding-top: 30px; }
+    padding-top: 30px;
+    margin-left: 90px; }
+    nav.navbar.navbar-default .navbar-nav li {
+      transition: all 0.3s ease-in-out; }
+      nav.navbar.navbar-default .navbar-nav li.active > a {
+        transition: all 0.3s ease-in-out;
+        color: #343838;
+        background-color: #f9f9f9; }
+        nav.navbar.navbar-default .navbar-nav li.active > a:hover {
+          color: #1b1e1e;
+          background-color: #e0e0e0; }
+      nav.navbar.navbar-default .navbar-nav li > a {
+        color: #f9f9f9;
+        transition: all 0.3s ease-in-out; }
+      nav.navbar.navbar-default .navbar-nav li:hover > a {
+        color: #e0e0e0;
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1); }
   nav.navbar.navbar-default .navbar-brand {
     margin-top: 30px;
     font-size: 4em;
@@ -6424,7 +6441,7 @@ section.hero {
     padding-top: 25px; }
   section.hero .jumbotron {
     height: 85vh;
-    background: url("/assets/images/jumbotron-bg.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/assets/images/story-bridge.jpg");
     background-size: cover; }
     section.hero .jumbotron h1 {
       margin-top: 30vh;

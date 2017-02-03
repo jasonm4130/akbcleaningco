@@ -7,6 +7,24 @@ nav.navbar.navbar-default
   z-index: 20
   .navbar-nav
     padding-top: 30px
+    margin-left: 90px
+    li
+      transition: all 0.3s ease-in-out
+      &.active > a
+        transition: all 0.3s ease-in-out
+        color: $color-five
+        background-color: $color-six
+        &:hover
+          color: darken($color-five, 10%)
+          background-color: darken($color-six, 10%)
+      > a
+        color: $color-six
+        transition: all 0.3s ease-in-out
+      &:hover
+        > a
+          color: darken($color-six, 10%)
+          transform: scale(1.1)
+
   .navbar-brand
     margin-top: 30px
     font-size: 4em

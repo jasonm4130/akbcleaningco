@@ -90,7 +90,6 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**/*.sass', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
     gulp.watch(['/assets/js/**/*.js'], ['jekyll-rebuild']);
-    gulp.watch(['/assets/**/*.*'], ['jekyll-rebuild'])
 });
 
 /**
@@ -98,3 +97,4 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('build', ['pug', 'sass', 'jekyll-build']);
