@@ -88,118 +88,118 @@ gulp.task('sass', function () {
    .pipe(gulp.dest('_includes'));
  });
 
-/**
- * Image Optimization Task
- */
- gulp.task('image-op-jpeg', ['large-image','medium-image', 'small-image', 'src-image'], function(done){
-   browserSync.notify(messages.jekyllBuild);
-   return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-       .on('close', done);
-       browserSync.reload();
- });
-
- gulp.task('image-op-png', ['large-image-png','medium-image-png', 'small-image-png', 'src-image-png'], function(done){
-   browserSync.notify(messages.jekyllBuild);
-   return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-       .on('close', done);
-       browserSync.reload();
- });
-
- gulp.task('large-image', function() {
-     return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
-         .pipe(imageResize({
-             width: 1600
-         }))
-         .pipe(imagemin({
-             progressive: true,
-             use: [jpegtran()]
-         }))
-         .pipe(rename({
-             suffix: '-large'
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('medium-image', function() {
-     return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
-         .pipe(imageResize({
-             width: 800
-         }))
-         .pipe(imagemin({
-             progressive: true,
-             use: [jpegtran()]
-         }))
-         .pipe(rename({
-             suffix: '-medium'
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('small-image', function() {
-     return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
-         .pipe(imageResize({
-             width: 400
-         }))
-         .pipe(imagemin({
-             progressive: true,
-             use: [jpegtran()]
-         }))
-         .pipe(rename({
-             suffix: '-small'
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('src-image', function() {
-     return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
-         .pipe(imagemin({
-             progressive: true,
-             use: [jpegtran()]
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('large-image-png', function() {
-     return gulp.src('assets/images/src/**/*.+(png)')
-         .pipe(imageResize({
-             width: 1600
-         }))
-         .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
-         .pipe(rename({
-             suffix: '-large'
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('medium-image-png', function() {
-     return gulp.src('assets/images/src/**/*.+(png)')
-         .pipe(imageResize({
-             width: 800
-         }))
-         .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
-         .pipe(rename({
-             suffix: '-medium'
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('small-image-png', function() {
-     return gulp.src('assets/images/src/**/*.+(png)')
-         .pipe(imageResize({
-             width: 400
-         }))
-         .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
-         .pipe(rename({
-             suffix: '-small'
-         }))
-         .pipe(gulp.dest('assets/images/'))
- });
-
- gulp.task('src-image-png', function() {
-     return gulp.src('assets/images/src/**/*.+(png)')
-         .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
-         .pipe(gulp.dest('assets/images/'))
- });
+// /**
+//  * Image Optimization Task
+//  */
+//  gulp.task('image-op-jpeg', ['large-image','medium-image', 'small-image', 'src-image'], function(done){
+//    browserSync.notify(messages.jekyllBuild);
+//    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+//        .on('close', done);
+//        browserSync.reload();
+//  });
+//
+//  gulp.task('image-op-png', ['large-image-png','medium-image-png', 'small-image-png', 'src-image-png'], function(done){
+//    browserSync.notify(messages.jekyllBuild);
+//    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+//        .on('close', done);
+//        browserSync.reload();
+//  });
+//
+//  gulp.task('large-image', function() {
+//      return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
+//          .pipe(imageResize({
+//              width: 1600
+//          }))
+//          .pipe(imagemin({
+//              progressive: true,
+//              use: [jpegtran()]
+//          }))
+//          .pipe(rename({
+//              suffix: '-large'
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('medium-image', function() {
+//      return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
+//          .pipe(imageResize({
+//              width: 800
+//          }))
+//          .pipe(imagemin({
+//              progressive: true,
+//              use: [jpegtran()]
+//          }))
+//          .pipe(rename({
+//              suffix: '-medium'
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('small-image', function() {
+//      return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
+//          .pipe(imageResize({
+//              width: 400
+//          }))
+//          .pipe(imagemin({
+//              progressive: true,
+//              use: [jpegtran()]
+//          }))
+//          .pipe(rename({
+//              suffix: '-small'
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('src-image', function() {
+//      return gulp.src('assets/images/src/**/*.+(jpeg|jpg)')
+//          .pipe(imagemin({
+//              progressive: true,
+//              use: [jpegtran()]
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('large-image-png', function() {
+//      return gulp.src('assets/images/src/**/*.+(png)')
+//          .pipe(imageResize({
+//              width: 1600
+//          }))
+//          .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
+//          .pipe(rename({
+//              suffix: '-large'
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('medium-image-png', function() {
+//      return gulp.src('assets/images/src/**/*.+(png)')
+//          .pipe(imageResize({
+//              width: 800
+//          }))
+//          .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
+//          .pipe(rename({
+//              suffix: '-medium'
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('small-image-png', function() {
+//      return gulp.src('assets/images/src/**/*.+(png)')
+//          .pipe(imageResize({
+//              width: 400
+//          }))
+//          .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
+//          .pipe(rename({
+//              suffix: '-small'
+//          }))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
+//
+//  gulp.task('src-image-png', function() {
+//      return gulp.src('assets/images/src/**/*.+(png)')
+//          .pipe(tinypng('rzSRVam-7qL8rvKyQp9Pl_ce4w3EqGVb'))
+//          .pipe(gulp.dest('assets/images/'))
+//  });
 
 
 /**
@@ -211,8 +211,8 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**/*.sass', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
     gulp.watch(['assets/js/**/*.js'], ['jekyll-rebuild']);
-    gulp.watch(['assets/images/src/*.+(jpg|jpeg)'], ['image-op-jpeg']);
-    gulp.watch(['assets/images/src/*.png'], ['image-op-png']);
+    // gulp.watch(['assets/images/src/*.+(jpg|jpeg)'], ['image-op-jpeg']);
+    // gulp.watch(['assets/images/src/*.png'], ['image-op-png']);
 });
 
 /**

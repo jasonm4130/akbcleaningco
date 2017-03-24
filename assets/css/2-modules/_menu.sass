@@ -1,83 +1,76 @@
-nav.navbar.navbar-default
-  background: none
-  border: none
-  border-radius: 0
-  position: absolute
-  top: 0
-  z-index: 20
-  width: 100%
-  @media (max-width: 768px)
-    background: $color-five
-  .navbar-collapse.in
-    overflow-x: hidden
-  &.navbar-pages
-    background-color: $color-five
-    width: 100%
-    .navbar-collapse
-      padding: 0
-    .navbar-brand
-      margin-top: 5px
-      margin-bottom: 5px
-    .navbar-nav
-      margin-left: 0px
-      padding-top: 0px
-      li
-        a
-          padding-top: 20px
-          padding-bottom: 20px
-          color: $color-six
-          &:hover
-            color: $color-five
-        &.active
-          a
-            &:hover
-              background: darken($color-six, 5%)
-  .navbar-nav
-    background: $color-five
-    @media (min-width: 768px)
-      margin-left: 90px
-      padding-top: 30px
-      background: transparent
-    li
-      transition: all 0.3s ease-in-out
-      &.active > a
-        transition: all 0.3s ease-in-out
-        color: $color-five
-        background-color: $color-six
-        &:hover
-          color: darken($color-five, 10%)
-          background-color: darken($color-six, 10%)
-      > a
-        color: $color-six
-        transition: all 0.3s ease-in-out
-        @media (max-width: 768px)
-          padding-top: 20px
-          padding-bottom: 20px
-      &:hover
-        > a
-          @media (max-width: 768px)
-            background-color: $color-six
-            color: $color-five
-          @media (min-width: 768px)
-            transform: scale(1.1)
-            color: darken($color-six, 10%)
-
+header#top-bar
   .navbar-brand
-    margin-top: 30px
-    font-size: 4em
-    font-weight: lighter
-    font-family: 'roboto', sans-serif
-    color: $color-six
-    transition: all 0.3s ease-in-out
-    @media (max-width: 420px)
-      font-size: 2.75em
+    a
       margin-top: 0
-    span.highlight
-      color: $color-one
-      font-family: 'Open Sans', sans-serif
-      transition: all 0.3s ease-in-out
-      font-weight: bold
-    &:hover
-      color: darken($color-six, 10%)
-      span.highlight
-        color: darken($color-one, 5%)
+      height: 100%
+      width: auto
+      img
+        margin-top: -2.5%
+        height: 120%
+        width: auto
+
+.navbar-default .navbar-nav > li > a:hover
+  color: $color-one
+
+.navbar.navbar-default
+  border: 0
+  border-radius: 0
+  margin-bottom: 0
+  .navbar-toggle
+    margin-top: 32px
+
+.navbar-header .navbar-brand
+  padding: 5px 0
+  a
+    height: auto
+    display: inline-block
+    margin-top: 8px
+
+.navbar-inverse .navbar-toggle
+  &:focus
+    background: #444
+  background: #444
+
+#top-bar
+  background: #fff
+  color: #fff
+  -webkit-transition: all 0.2s ease-out 0s
+  transition: all 0.2s ease-out 0s
+  padding: 15px 0
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1)
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1)
+  border-bottom: 1px solid #dedede
+  .navbar-nav > li > a:hover
+    background: transparent
+  &.animated-header
+    padding: 20px 0
+    background: #ffffff
+    box-shadow: none
+  .main-menu li
+    > a
+      color: #444
+    position: relative
+    a
+      font-size: 14px
+      font-weight: 500
+      border-bottom: 2px solid transparent
+      -webkit-transition: .3s all
+      -o-transition: .3s all
+      transition: .3s all
+      text-transform: uppercase
+      &:hover
+        color: $color-one
+
+.navbar-custom .nav li > a
+  position: relative
+  color: #000
+
+.navbar-right .dropdown-menu
+  right: auto
+  left: 0
+
+.navbar-custom .dropdown-menu
+  position: absolute
+  display: block
+  visibility: hidden
+  opacity: 0
