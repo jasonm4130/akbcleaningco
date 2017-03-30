@@ -1,0 +1,38 @@
+.flat .plan
+  list-style: none
+  padding: 0 0 20px
+  margin: 0 0 15px
+  background: #fff
+  text-align: center
+  .btn
+    background: $color-one
+    color: $color-three
+    border-radius: 0px
+  li
+    padding: 10px 15px
+    color: #ccc
+    border-top: 1px solid #f5f5f5
+    transition: 300ms
+    &.plan-price
+      border-top: 0
+    &.plan-name
+      padding: 15px
+      font-size: 24px
+      line-height: 24px
+      color: #fff
+      background: lighten($color-one, 10%)
+      margin-bottom: 30px
+      border-top: 0
+    > strong
+      color: $color-one
+    &.plan-action
+      margin-top: 10px
+      border-top: 0
+  &.featured
+    transform: scale(1.1)
+    li.plan-name
+      background: $color-one
+    &:hover li.plan-name
+      background: darken($color-one, 10%)
+  &:hover li.plan-name
+    background: $color-one
