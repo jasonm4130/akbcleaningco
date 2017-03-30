@@ -1,3 +1,5 @@
+#pricing-table
+  margin-bottom: 60px
 .flat .plan
   list-style: none
   padding: 0 0 20px
@@ -8,31 +10,35 @@
     background: $color-one
     color: $color-three
     border-radius: 0px
+    &:hover
+      background: darken($color-one, 5%)
+    h3
+      margin-top: 0
+      margin-bottom: 0
+      text-transform: uppercase
+      font-weight: 300
   li
     padding: 10px 15px
-    color: #ccc
-    border-top: 1px solid #f5f5f5
+    color: $color-two
+    border-top: 1px solid lighten($color-two, 60%)
     transition: 300ms
     &.plan-price
       border-top: 0
     &.plan-name
       padding: 15px
-      font-size: 24px
-      line-height: 24px
       color: #fff
-      background: lighten($color-one, 10%)
+      background: $color-one
       margin-bottom: 30px
       border-top: 0
+      text-transform: uppercase
+      h2
+        margin: 0
+        font-weight: 800
+        font-size: 2em
     > strong
       color: $color-one
     &.plan-action
       margin-top: 10px
       border-top: 0
-  &.featured
-    transform: scale(1.1)
-    li.plan-name
-      background: $color-one
-    &:hover li.plan-name
-      background: darken($color-one, 10%)
   &:hover li.plan-name
-    background: $color-one
+    background: darken($color-one, 5%)
