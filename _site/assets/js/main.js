@@ -70,11 +70,11 @@ $(document).ready(function(){
         }
     });
 
-    $("#clients-logo").owlCarousel({
+    $("#testimonials-img").owlCarousel({
  
         itemsCustom : false,
         pagination : false,
-        items : 5,
+        items : 4,
         autoplay: true,
 
     })
