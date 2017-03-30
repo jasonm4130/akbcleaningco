@@ -1,0 +1,57 @@
+section#contact-section
+  .container
+    .row
+      .col-md-6
+        .block
+          h2.subtitle.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='.3s') Contact Us
+          p.subtitle-des.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='.5s')
+            | Got a question for us? or maybe you just want to say hi, or thanks for the great service we gave. Get in touch with us below.
+          .contact-form
+            form#contact-form(method='post', action='https://formspree.io/aaron.christopherb@gmail.com', role='form')
+              .form-group.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='.6s')
+                input#name.form-control(type='text', placeholder='Your Name', name='name')
+              .form-group.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='.8s')
+                input#email.form-control(type='email', placeholder='Your Email', name='email')
+              .form-group.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='1s')
+                input#subject.form-control(type='text', placeholder='Subject', name='_subject')
+              .form-group.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='1.2s')
+                textarea#message.form-control(rows='6', placeholder='Message', name='message')
+              #submit.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='1.4s')
+                input(type='text', name='_gotcha', style='display:none')
+                input#contact-submit.btn.btn-default.btn-send(type='submit', value='Send Message')
+      .col-md-6
+        .map-area
+          h2.subtitle.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='.3s') Our Area
+          p.subtitle-des.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='.5s')
+            | A.K.B Cleaning Co is based in loganholme and service the greater Brisbane region
+          .map
+            iframe(src='https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d56550.75480935996!2d153.15303740447624!3d-27.64240713573371!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1490873799811', width='100%', height='400', frameborder='0', style='border:0', allowfullscreen='')
+    .row.address-details
+      .col-md-3
+        .address.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='.3s')
+          i.ion-ios-location-outline
+          h5
+            | Loganholme, QLD 
+            br
+            | 4129, Brisbane
+      .col-md-3
+        .address.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='.5s')
+          i.ion-social-facebook-outline
+          h5
+            | Facebook
+            br
+            a(href="https://facebook.com/akbcleaningco") AKB Cleaning Co
+      .col-md-3
+        .email.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='.7s')
+          i.ion-ios-email-outline
+          p
+            | Email
+            br
+            a(href="mailto:akbcleaningco@gmail.com") akbcleaningco@gmail.com
+      .col-md-3
+        .phone.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='.9s')
+          i.ion-ios-telephone-outline
+          p
+            a(href="tel:123456") +07 3029 1542
+            br
+            a(href="tel:123456") +04 325 698 42
