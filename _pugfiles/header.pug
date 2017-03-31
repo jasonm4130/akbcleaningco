@@ -24,11 +24,15 @@ header#top-bar.navbar-fixed-top.animated-header
           | {% assign sorted_pages = site.pages | sort:"order" %}
           | {% for p in sorted_pages %}
           | {% if page.url == p.url %}
+          | {% unless p.exclude %}
           li.active
             a(href='{{p.url}}') {{ p.title }}
+          | {% endunless %}
           | {% else %}
+          | {% unless p.exclude %}
           li
             a(href='{{ p.url }}') {{p.title}}
+          | {% endunless %}
           | {% endif %}
           | {% endfor %}
     // /main nav
