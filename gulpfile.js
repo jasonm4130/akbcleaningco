@@ -89,8 +89,7 @@ gulp.task('pug', function() {
 
 gulp.task('img-refresh', function(){
     gulp.src('assets/images/**.*')
-    .pipe(gulp.dest('_site/assets/images'))
-    browserSync.reload();
+    .pipe(gulp.dest('_site/assets/images/'))
 })
 
 /**
