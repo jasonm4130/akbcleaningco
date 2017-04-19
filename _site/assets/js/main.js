@@ -106,6 +106,11 @@ $(".fancybox").fancybox({
     }
 });
 
+// Match Height
+$(function() {
+	$('.about-feature .block').matchHeight();
+});
+
 
 
 
